@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attach Accessory</title>
+    <link href="../css/site.css" type="text/css" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.png' />
+</head>
+
+<body>
+    <div class="container">
+        {{>header}}
+        <main>
+            <h1>{{name}}</h1>
+            <img class="cube" src="{{imageUrl}}">
+            <div class="details">
+                <p><span>Description:</span> {{description}} </p>
+                <p><span>Difficulty level:</span> {{difficultyLevel}} </p>
+                <a class="btn" href="/attach/accessory/{{_id}}">Attach accessory</a>
+                <a class="btn" href="/home">Back</a>
+            </div>
+            {{#if accessory}}
+            <h2>Accessories</h2>
+            {{#each accessory}}
+            {{> detailsAccessory}}
+            {{/each}}
+            {{else}}
+            <h3 class="italic">This cube has no accessories yet...</h3>
+            {{/if}}
+    </div>
+    </main>
+    </div>
+    {{>footer}}
+</body>
+
+</html>

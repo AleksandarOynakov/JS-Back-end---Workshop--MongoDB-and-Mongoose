@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Attach Accessory</title>
+  <link href="/css/site.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    {{>header}}
+    <main>
+      <h1>Attach a new accessory</h1>
+      <div class="form">
+        <h2>{{name}}</h2>
+        <img class="cube" src="{{imageUrl}}">
+        {{>accessoryForm}}
+        <a class="btn" href="/">Back</a>
+      </div>
+    </main>
+  </div>
+  {{>footer}}
+
+</body>
+
+</html>

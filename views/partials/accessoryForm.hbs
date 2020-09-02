@@ -1,0 +1,13 @@
+{{#if accessories}}
+<form action='/attach/accessory/{{_id}}' method="POST">
+    <label for="accessory">Accessories</label>
+    <select id="accessory" name="accessory">
+        {{#each accessories}}
+        {{> accessoryFormOptions}}
+        {{/each}}
+    </select>
+    <input type="submit" value="Attach">
+</form>
+{{else}}
+<h3 class="italic">This cube has all available accessories so far or there is no available at all...</h3>
+{{/if}}

@@ -1,0 +1,19 @@
+{
+    "lastIndex": 0,
+    "entities": [
+        {
+            "id": 0,
+            "name": "test",
+            "description": "yyyyeees",
+            "imgUrl": "https://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2020/7/10/332636d766cc43bb9c34b6a5b6f0d360_18.jpg",
+            "diffLevel": 3
+        },
+        {
+            "id": 0,
+            "name": "testsdasda",
+            "description": "yyyyeees",
+            "imgUrl": "https://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2020/7/10/332636d766cc43bb9c34b6a5b6f0d360_18.jpg",
+            "diffLevel": 2
+        }
+    ]
+}
