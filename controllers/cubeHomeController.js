@@ -4,16 +4,16 @@ const mongoose = require('mongoose');
 module.exports = {
     ren: function (req, res) {
         if (Object.keys(res.locals).includes('dataFiltered')) {
-            res.render('../views/index.hbs', { cubes: res.locals.dataFiltered });
+            res.render('../views/index.hbs', { cubes: res.locals.dataFiltered, user: req.auth });
         } else {
             cubeModel.getAll(mongoose.models.Cube).then((cubesCollection) => {
-                res.render('../views/index.hbs', { cubes: cubesCollection });
+                res.render('../views/index.hbs', { cubes: cubesCollection, user: req.auth });
             });
         }
     },
     search: function (req, res, next) {
         cubeModel.getAll(mongoose.models.Cube)
-            .then((cubes) => {         
+            .then((cubes) => {
                 if (req.body.from && req.body.to && req.body.search) {
                     let cubesFiltered = cubes.filter(cube => (
                         cube.difficultyLevel >= +req.body.from &&

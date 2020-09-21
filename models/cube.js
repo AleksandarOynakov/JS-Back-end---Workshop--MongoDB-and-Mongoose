@@ -1,5 +1,3 @@
-let data = require('../config/database.json');
-let fs = require('fs');
 const mongoose = require('mongoose');
 
 const cubeSchema = new mongoose.Schema({
@@ -57,10 +55,23 @@ module.exports = {
     },
     findAndUpdate: function (model, id, data) {
         return new Promise(function (resolve, reject) {
-            model.findByIdAndUpdate({ _id: id }, { $push: data }, function (err, result) {
+            let command = { "$push": data };
+
+            if (!data.hasOwnProperty('accessory'))
+                command = { ...data };
+
+            model.findByIdAndUpdate({ _id: id }, command, function (err, result) {
                 if (err) reject(err)
-                resolve(result)
+                resolve(result);
             });
         });
-    }
+    },
+    findAndDelete: function (model, id) {
+        return new Promise(function (resolve, reject) {
+            model.findByIdAndRemove({ _id: id }, function (err, result) {
+                if (err) reject(err)
+                resolve(result);
+            });
+        });
+    },
 }
